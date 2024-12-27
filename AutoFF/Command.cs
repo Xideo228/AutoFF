@@ -16,6 +16,7 @@ namespace AutoFF
 
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
+            Player plr;
             if (!sender.CheckPermission("ff.togle"))
             {
                 response = "You don't have enough permissions.";
@@ -35,7 +36,7 @@ namespace AutoFF
                 Server.FriendlyFire = true;
                 foreach (Player player in Player.List)
                 {
-                    player.ShowHint(Plugin.plugin.Translation.HintText2);
+                    player.ShowHint(Plugin.plugin.Translation.HintText);
                 }
                 response = "Ok, FF is enabled";
                 return true;
