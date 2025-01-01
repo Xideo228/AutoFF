@@ -1,11 +1,11 @@
 ﻿using Exiled.API.Features;
 using Exiled.Events.EventArgs.Server;
-using Exiled.API.Features.Items;
 using Exiled.Events.EventArgs.Player;
 using PluginAPI.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Firearm = Exiled.API.Features.Items.Firearm;
 
 namespace AutoFF
 {
@@ -23,9 +23,9 @@ namespace AutoFF
             {
                 if (Plugin.plugin.Config.Jailbirt)
                 {
-                    player.AddItem(Plugin.jailbird);
-                    player.ShowHint(Plugin.plugin.Translation.HintText);
+                    player.AddItem(ItemType.Jailbird);
                 }
+                player.ShowHint(Plugin.plugin.Translation.HintText);
             }
         }
 
